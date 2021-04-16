@@ -39,14 +39,14 @@ $ pip install DESfiddle
 
 ```python:
 # Importing
-import DESfiddle
+import DESfiddle.utils as dfu
 
 # Usage
-permutation_arr = DESfiddle.generate_permutation(64)
+permutation_arr = dfu.generate_permutation(64)
 ```
 ```python:
 # Importing
-from DESfiddle import *
+from DESfiddle.utils import *
 # or just specify the function name you wanna import
 
 # Usage
@@ -55,7 +55,7 @@ permutation_arr = generate_permutation(64)
 
 ## Code Examples
 ```python:
-from DESfiddle import *
+from DESfiddle.utils import *
 
 # Inputs in binary setting
 plaintext = "0101010101010101010101010101010101010101010101010101010101010101"
@@ -87,7 +87,7 @@ diff = calc_diff(ref_round_ciphertexts, round_ciphertexts)
 ```
 
 ```python:
-from DESfiddle import *
+from DESfiddle.utils import *
 
 # Inputs in ASCII setting
 plaintext = "This is so cool"
