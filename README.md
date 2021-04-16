@@ -136,7 +136,7 @@ DESfiddle is built over python. So if you are new to python, please head over to
 ### Community
 
 * The whole DESfiddle documentation, such as setting up a development environment, the project, and testing, can be read [here]().
-* If you have any questions regarding zulip-electron, open an [issue](https://github.com/dilbwagsingh/DESfiddle/issues/new) or ask it directly on [Linkedin](https://www.linkedin.com/in/dilbwagsingh/).
+* If you have any questions regarding DESfiddle, open an [issue](https://github.com/dilbwagsingh/DESfiddle/issues/new) or ask it directly on [Linkedin](https://www.linkedin.com/in/dilbwagsingh/).
 
 ### Issue
 Ensure the bug was not already reported by searching on GitHub under [issues](https://github.com/dilbwagsingh/DESfiddle/issues). If you're unable to find an open issue addressing the bug, open a [new issue](https://github.com/dilbwagsingh/DESfiddle/issues/new).
