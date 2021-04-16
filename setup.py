@@ -6,9 +6,10 @@ with open("README.md","r") as desc:
 # Setting up
 setup(
     name="DESfiddle",
-    version="0.0.9",
+    version="0.0.10",
     author="Dilbwag Singh",
     author_email="dilbwagsingh.che18@iitbhu.ac.in",
+    url="https://github.com/dilbwagsingh/DESfiddle",
     description="A python package that offers high flexibility for implementing and experimenting with non-classical DES.",
     long_description = long_description,
     long_description_content_type = "text/markdown",
