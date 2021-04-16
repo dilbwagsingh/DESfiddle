@@ -20,7 +20,7 @@ There are quite a few DES packages for python but none of them offer such high f
 	* S-boxes
 	* Expansion box
 * Implementing classical DES is as easy as leaving the hyperparameters to their default values and the rest will be taken care of automatically.
-* Each function has a detailed doc string attached to it, thus minimising the need to navigate to the docs for usage referencing.
+* Each function has a detailed doc string attached to it, thus minimising the need to navigate to the docs for usage referencing. So, if you quickly wanna see the function description just type in `help(<function_name>)` in the python interpreter.
 
 > **Bonus**: This package can be a life-saver for CSE 537- Network Security course taught at IIT (BHU).
 
