@@ -1,6 +1,7 @@
 # Functions
 
 Here is a list of all the available functions, and this list will be updated if more are added.
+These docs can also be accessed in the python interpreter by using `help(<function_name>)`, eg. `help(permute)`
 
 * ### permute
 	```python:
@@ -10,7 +11,7 @@ Here is a list of all the available functions, and this list will be updated if 
 	    final += s[arr[i] - 1]
 	  return final
 	```
-	Shuffle a string using an 1-indexed array and resizing it to size n. This function is used 		to resize and apply a specific permutation to a string during various iterations of DES.
+	Shuffle a string using an 1-indexed array and resizing it to size n. This function is used to resize and apply a specific permutation to a string during various iterations of DES.
 
 * ### xor
 	```python:
