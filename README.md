@@ -1,4 +1,3 @@
-
 # DESfiddle
 
 A simple to use python package for implementing and experimenting with the famous DES encryption algorithm. It implements both classical (default settings from the textbook description of DES) and non-classical DES. 
@@ -12,7 +11,7 @@ There are quite a few DES packages for python but none of them offer such high f
 ## Features
 
 * Only package till date to implement a non-classical version of DES.
-* Lots of hyperparameters<small>*</small> to tweak-
+* Lots of hyperparameters<sub><sup>*</sup></sub> to tweak-
 	* Number of rounds
 	* Halfwidth for plaintext & key
 	* Hamming distance for plaintext & key
@@ -25,7 +24,7 @@ There are quite a few DES packages for python but none of them offer such high f
 
 > **Bonus**: This package can be a life-saver for CSE 537- Network Security course taught at IIT (BHU).
 
-<small>*Tweaking some of these may require changing the source code</small>
+<sub><sup>*Tweaking some of these may require changing the source code as of the current release</sup></sub>
 
 
 ## Installation
