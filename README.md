@@ -152,7 +152,7 @@ Detailed information is very helpful to understand an issue, for example-
 
 ### Pull requests
 Pull Requests are always welcome.
-* When you edit the code, please run  `python test.py`  to test your code before you  `git commit`.
+* When you edit the code, please run  `python basic_test.py`  to test your code before you  `git commit`.
 * Ensure the PR description clearly describes the problem and solution. It should include-
 	*	The operating system used while testing
 	*	DESfiddle version number
