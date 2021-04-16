@@ -6,10 +6,10 @@ with open("README.md","r") as desc:
 # Setting up
 setup(
     name="DESfiddle",
-    version="0.0.4",
+    version="0.0.9",
     author="Dilbwag Singh",
     author_email="dilbwagsingh.che18@iitbhu.ac.in",
-    description="For experimenting with the Data Encryption Standard",
+    description="A python package that offers high flexibility for implementing and experimenting with non-classical DES.",
     long_description = long_description,
     long_description_content_type = "text/markdown",
     py_modules=["utils"],
