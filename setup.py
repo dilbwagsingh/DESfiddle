@@ -1,20 +1,29 @@
 from setuptools import setup, find_packages
 
+# Global variables
 with open("README.md","r") as desc:
     long_description = desc.read()
+
+VERSION="0.0.22"
+
 
 # Setting up
 setup(
     name="DESfiddle",
-    version="0.0.17",
+    version=VERSION,
+    url="https://github.com/dilbwagsingh/DESfiddle",
+
     author="Dilbwag Singh",
     author_email="dilbwagsingh.che18@iitbhu.ac.in",
-    url="https://github.com/dilbwagsingh/DESfiddle",
+
     description="A python package that offers high flexibility for implementing and experimenting with non-classical DES.",
     long_description = long_description,
     long_description_content_type = "text/markdown",
-    packages=find_packages(),
+
+    packages=find_packages(exclude=["test"]),
+
     install_requires=[],
+    python_requires=">=3.5.0",
     keywords=['python', 'DES', 'Data Encryption Standard', 'DEA', 'Data Encryption Algorithm'],
     classifiers=[
     	"Development Status :: 1 - Planning",
