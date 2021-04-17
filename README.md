@@ -9,7 +9,7 @@
 # DESfiddle
 
 A simple to use python package for implementing and experimenting with the famous DES encryption algorithm. It implements both classical (default settings from the textbook description of DES) and non-classical DES. 
-Check out [DES app]() for a very specific implementation demonstrating avalanche effect and weak keys using the package.
+Check out [DES app](https://github.com/dilbwagsingh/DES-app) for a very specific implementation demonstrating avalanche effect and weak keys using the package.
 > **Note**: This project is currently an unstable release. To report any instabilities or issues please refer to the contribution section.
 
 ## Motivation
