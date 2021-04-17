@@ -1,3 +1,11 @@
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/dilbwagsingh/DESfiddle)
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![PyPI pyversions](https://img.shields.io/pypi/pyversions/DESfiddle)](https://github.com/dilbwagsingh/DESfiddle)
+[![PyPI version](https://badge.fury.io/py/DESfiddle.svg)](https://badge.fury.io/py/DESfiddle)
+[![PyPI status](https://img.shields.io/pypi/status/DESfiddle)](https://pypi.python.org/pypi/DESfiddle/)
+[![GitTutorial](https://img.shields.io/badge/PR-Welcome-%23FF8300.svg?)](https://git-scm.com/book/en/v2/GitHub-Contributing-to-a-Project)
+[![Downloads](https://static.pepy.tech/personalized-badge/desfiddle?period=total&units=abbreviation&left_color=grey&right_color=blue&left_text=Downloads)](https://pepy.tech/project/desfiddle)
+
 # DESfiddle
 
 A simple to use python package for implementing and experimenting with the famous DES encryption algorithm. It implements both classical (default settings from the textbook description of DES) and non-classical DES. 
