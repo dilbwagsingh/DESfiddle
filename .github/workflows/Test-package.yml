@@ -1,0 +1,39 @@
+name: Test the package
+
+on:
+  # Triggers the workflow on push to the main branch
+  push:
+    branches: [ main ]
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Test the new changes
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Set up Python3
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+        
+    - name: Upgrade pip version
+      run: |
+        python -m pip install --upgrade pip
+      
+    - name: Install dependencies
+      run: |
+        pip install setuptools wheel twine
+    
+    - name: Test current version with unittest
+      run:
+        python -m unittest
+    
+    - name: Check building the package
+      run: |
+        python setup.py sdist bdist_wheel
+        
