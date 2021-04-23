@@ -30,6 +30,12 @@ class Test(unittest.TestCase):
     expected_result = "444553666964646c65"
     self.assertEqual(bin_to_hex("10001000100010101010011011001100110100101100100011001000110110001100101"), expected_result)
 
+  def test_generate_array(self):
+    expected_result = [i for i in range(1,65)]
+    arr = generate_array(64)
+    arr.sort()
+    self.assertEqual(arr,expected_result)
+
   def test_calc_diff(self):
     expected_result = [3, 0, 1]
     self.assertEqual(calc_diff([["1010", "11", "1011"]], [["0001", "11", "1111"]]), expected_result)
@@ -42,22 +48,10 @@ class Test(unittest.TestCase):
   def test_generate_PC_2(self):
     expected_result = 56
     self.assertEqual(len(generate_PC_2(64, 8)), expected_result)
-  
-  def test_generate_initial_perm(self):
-    expected_result = 64
-    self.assertEqual(len(generate_initial_perm(64)), expected_result)
 
   def test_generate_expansion(self):
     expected_result = 72
     self.assertEqual(len(generate_expansion(64, 8)), expected_result)
-  
-  def test_generate_permutation(self):
-    expected_result = 64
-    self.assertEqual(len(generate_permutation(64)), expected_result)
-  
-  def test_generate_final_perm(self):
-    expected_result = 64
-    self.assertEqual(len(generate_final_perm(64)), expected_result)
   
   def test_generate_inverse(self):
     arr = [7,2,4,5,1,3,6]
