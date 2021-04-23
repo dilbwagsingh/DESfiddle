@@ -97,7 +97,7 @@ def generate_final_perm(size: int) -> List[int]:
 
 def generate_inverse(arr: List[int]) -> List[int]:
   """A non-classical DES function used to generate inverse initial permutation array (positionwise inverse) from the initial permutation array. Returns an 1-indexed array."""
-  inv = [0 for i in range(len(arr))]
+  inv = [0 for _ in range(len(arr))]
   for i,x in enumerate(arr):
     inv[x-1] = i+1 # Assuming numbers in the array start from 1
   return inv
