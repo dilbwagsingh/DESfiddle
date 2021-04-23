@@ -84,7 +84,7 @@ class Test(unittest.TestCase):
     key = "1111111111111111111111111111111100000000000000000000000000000000"
     rkb, _ = generate_round_keys(key)
     ciphertext, _ = encrypt(plaintext_arr, rkb)
-    expected_result = "41a856e3be1978bc"
+    expected_result = "4df494299adaf21c"
     self.assertEqual(ciphertext, expected_result)
 
 if __name__ == "__main__":

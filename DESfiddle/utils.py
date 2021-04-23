@@ -42,7 +42,9 @@ def bin_to_hex(txt: str) -> str:
 
 def generate_array(size: int) -> List:
   """Generates a random 1-indexed array"""
-  return sample(range(1,size+1),size)
+  arr = [x for x in range(1,size+1)]
+  shuffle(arr)
+  return arr
 
 def calc_diff(arr1: List[List[str]], arr2: List[List[str]]) -> List[int]:
   """Calculate positionwise difference of two List of List of iterables(eg. List of List of strings). This is used for plotting the avalanche effect induced during each round of DES."""
@@ -59,10 +61,8 @@ def calc_diff(arr1: List[List[str]], arr2: List[List[str]]) -> List[int]:
 def generate_PC_1(size: int) -> List[int]:
   """A non-classical DES function used to generate Permuted Choice 1 array of a given size. This array is used to drop parity bits of the key in DES."""
   arr = generate_array(size)
-  for x in arr:
-    if x%8 == 0:
-      arr.remove(x)
-  return arr
+  ret = [x for x in arr if x%8 != 0]
+  return ret
 
 def generate_PC_2(size: int, n: int) -> List[int]:
   """A non-classical DES function used to generate the Permuted Choice 2 array of length (size - n). This array is used to generate an equivalent length round key as the plaintext block in the round function of DES. It returns an 1-indexed array."""
@@ -336,3 +336,10 @@ def encrypt(plaintext_arr: List[str], rkb: List[str], rounds: int =16, halfwidth
 
   final = bin_to_hex(final)
   return (final, round_ciphertexts)
+
+
+plaintext_arr = ["0101010101010101010101010101010101010101010101010101010101010101"]
+key = "1111111111111111111111111111111100000000000000000000000000000000"
+rkb, _ = generate_round_keys(key)
+ciphertext, _ = encrypt(plaintext_arr, rkb)
+print(ciphertext)
