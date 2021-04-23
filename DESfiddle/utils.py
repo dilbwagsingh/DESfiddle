@@ -336,10 +336,3 @@ def encrypt(plaintext_arr: List[str], rkb: List[str], rounds: int =16, halfwidth
 
   final = bin_to_hex(final)
   return (final, round_ciphertexts)
-
-
-plaintext_arr = ["0101010101010101010101010101010101010101010101010101010101010101"]
-key = "1111111111111111111111111111111100000000000000000000000000000000"
-rkb, _ = generate_round_keys(key)
-ciphertext, _ = encrypt(plaintext_arr, rkb)
-print(ciphertext)
