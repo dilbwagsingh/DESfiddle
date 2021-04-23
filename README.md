@@ -10,7 +10,6 @@
 
 A simple to use python package for implementing and experimenting with the famous DES encryption algorithm. It implements both classical (default settings from the textbook description of DES) and non-classical DES. 
 Check out [DES app](https://github.com/dilbwagsingh/DES-app) for a very specific implementation demonstrating avalanche effect and weak keys using the package.
-> **Note**: This project is currently an unstable release. To report any instabilities or issues please refer to the contribution section.
 
 ## Motivation
 
@@ -147,9 +146,11 @@ DESfiddle is built over python. So if you are new to python, please head over to
 * If you have any questions regarding DESfiddle, open an [issue](https://github.com/dilbwagsingh/DESfiddle/issues/new) or ask it directly on [Linkedin](https://www.linkedin.com/in/dilbwagsingh/).
 
 ### Issue
+
 Ensure the bug was not already reported by searching on GitHub under [issues](https://github.com/dilbwagsingh/DESfiddle/issues). If you're unable to find an open issue addressing the bug, open a [new issue](https://github.com/dilbwagsingh/DESfiddle/issues/new).
 
 ### Write detailed  information
+
 Detailed information is very helpful to understand an issue, for example-
 * How to reproduce the issue, step-by-step.
 * The expected behavior (or what is wrong).
@@ -159,6 +160,7 @@ Detailed information is very helpful to understand an issue, for example-
 * The DESfiddle version.
 
 ### Pull requests
+
 Pull Requests are always welcome.
 * When you edit the code, please run  `python -m unittest`  to test your code before you  `git commit`.
 * Ensure the PR description clearly describes the problem and solution. It should include-
@@ -167,6 +169,7 @@ Pull Requests are always welcome.
 	*	The relevant issue number, if applicable.
 
 ## Version
+
 Follows syntax vM.M.P
 First is major and means not backwards compatible changes. Second is minor and means backwards compatible changes. 
 Third is patch and means small backwards compatible changes.
