@@ -1,10 +1,19 @@
+import io
+import os
+import re
 from setuptools import setup, find_packages
 
-# Global variables
-with open("README.md","r") as desc:
-    long_description = desc.read()
 
-VERSION="0.0.24"
+def read(filename):
+    filename = os.path.join(os.path.dirname(__file__), filename)
+    text_type = type(u"")
+    with io.open(filename, mode="r", encoding='utf-8') as fd:
+        return re.sub(text_type(r':[a-z]+:`~?(.*?)`'), text_type(r'``\1``'), fd.read())
+
+# Global variables
+LONG_DESCRIPTION = read("README.md")
+
+VERSION="0.0.25"
 
 
 # Setting up
@@ -17,7 +26,7 @@ setup(
     author_email="dilbwagsingh.che18@iitbhu.ac.in",
 
     description="A python package that offers high flexibility for implementing and experimenting with non-classical DES.",
-    long_description = long_description,
+    long_description = LONG_DESCRIPTION,
     long_description_content_type = "text/markdown",
 
     packages=find_packages(exclude=["test"]),
