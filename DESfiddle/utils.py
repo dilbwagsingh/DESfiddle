@@ -40,6 +40,10 @@ def bin_to_hex(txt: str) -> str:
   """Convert binary string to ASCII string.Useful for preprocessing the key and plaintext in different settings."""
   return hex(int(txt,2))[2:]
 
+def generate_array(size: int) -> List:
+  """Generates a random 1-indexed array"""
+  return sample(range(1,size+1),size)
+
 def calc_diff(arr1: List[List[str]], arr2: List[List[str]]) -> List[int]:
   """Calculate positionwise difference of two List of List of iterables(eg. List of List of strings). This is used for plotting the avalanche effect induced during each round of DES."""
   diff = []
@@ -54,8 +58,10 @@ def calc_diff(arr1: List[List[str]], arr2: List[List[str]]) -> List[int]:
 
 def generate_PC_1(size: int) -> List[int]:
   """A non-classical DES function used to generate Permuted Choice 1 array of a given size. This array is used to drop parity bits of the key in DES."""
-  arr = [x for x in range(1,size+1) if x%8 != 0]
-  shuffle(arr)
+  arr = generate_array(size)
+  for x in arr:
+    if x%8 == 0:
+      arr.remove(x)
   return arr
 
 def generate_PC_2(size: int, n: int) -> List[int]:
@@ -68,30 +74,12 @@ def generate_PC_2(size: int, n: int) -> List[int]:
   shuffle(arr)
   return arr
 
-def generate_initial_perm(size: int) -> List[int]:
-  """A non-classical DES function used to generate 1-indexed initial permutation array of a given size. The generated array is used to permute the plaintext before a round of DES. Returns an 1-indexed array."""
-  arr = [x for x in range(1,size+1)]
-  shuffle(arr)
-  return arr
-
 def generate_expansion(size: int, n: int) -> List[int]:
   """A non-classical DES function used to generate expansion array of a length (size + n). This function is used to increase the length of plaintext block to match the size of the roundkey in DES. Returns an 1-indexed array."""
   arr = [x for x in range(1,size+1)]
   pos = sample(range(1,size+1),n)
   for i in pos:
     arr.append(i)
-  shuffle(arr)
-  return arr
-
-def generate_permutation(size: int) -> List[int]:
-  """A non-classical DES function used to generate permutation array of a given size. The returned array is used to permute the output of the S-box in a round of DES. Returns an 1-indexed array."""
-  arr = [x for x in range(1,size+1)]
-  shuffle(arr)
-  return arr
-
-def generate_final_perm(size: int) -> List[int]:
-  """A non-classical DES function used to generate final permutation array of a given size. The returned array is used to permute rouond ciphertexts produced before applying the inverse initial permutation. Returns an 1-indexed array."""
-  arr = [x for x in range(1,size+1)]
   shuffle(arr)
   return arr
 
@@ -296,20 +284,11 @@ def encrypt(plaintext_arr: List[str], rkb: List[str], rounds: int =16, halfwidth
                     32, 27, 3, 9, 
                     19, 13, 30, 6, 
                     22, 11, 4, 25 ]
-    final_perm = [ 40, 8, 48, 16, 56, 24, 64, 32, 
-                39, 7, 47, 15, 55, 23, 63, 31, 
-                38, 6, 46, 14, 54, 22, 62, 30, 
-                37, 5, 45, 13, 53, 21, 61, 29, 
-                36, 4, 44, 12, 52, 20, 60, 28, 
-                35, 3, 43, 11, 51, 19, 59, 27, 
-                34, 2, 42, 10, 50, 18, 58, 26, 
-                33, 1, 41, 9, 49, 17, 57, 25 ]
     inv_initial_perm = generate_inverse(initial_perm)
   else:
-    initial_perm = generate_initial_perm(2*halfwidth)
+    initial_perm = generate_array(2*halfwidth)
     expansion = generate_expansion(halfwidth,len(rkb[0]) - halfwidth)
-    permutation = generate_permutation(halfwidth)
-    final_perm = generate_final_perm(2*halfwidth)
+    permutation = generate_array(halfwidth)
     inv_initial_perm = generate_inverse(initial_perm)
 
   final = ""
@@ -352,8 +331,7 @@ def encrypt(plaintext_arr: List[str], rkb: List[str], rounds: int =16, halfwidth
     # Combine the halves
     combine = left + right
     # Final Permutation 
-    ciphertext = permute(combine, final_perm, len(final_perm))
-    ciphertext = permute(ciphertext, inv_initial_perm, len(inv_initial_perm))
+    ciphertext = permute(combine, inv_initial_perm, len(inv_initial_perm))
     final += ciphertext
 
   final = bin_to_hex(final)
