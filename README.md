@@ -165,3 +165,10 @@ Pull Requests are always welcome.
 	*	The operating system used while testing
 	*	DESfiddle version number
 	*	The relevant issue number, if applicable.
+
+## Version
+Follows syntax vM.M.P
+First is major and means not backwards compatible changes. Second is minor and means backwards compatible changes. 
+Third is patch and means small backwards compatible changes.
+
+The manual place of source of truth for the version is at `setup.py`
