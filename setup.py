@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 with open("README.md","r") as desc:
     LONG_DESCRIPTION = desc.read()
 
-VERSION="0.0.24"
+VERSION="1.0.0"
 
 
 # Setting up
